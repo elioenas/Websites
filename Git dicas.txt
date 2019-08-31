@@ -57,7 +57,8 @@
       git config --local user.email meulindoemail@centraldeemailslindos.com
 
 	  
-     C-01 – Para iniciarmos o repositório que queremos trabalhar e depois empurrá-lo para nosso servidor git, primeiramente devemos iniciar o nosso repositório git. Por ora saberemos também que será criada a nossa branch master (mais à frente veremos o que são branches, como utilizar mais de uma ao mesmo tempo e o que você ganha fazendo isso).
+     C-01 – Para iniciarmos o repositório que queremos trabalhar e depois empurrá-lo para nosso servidor git, primeiramente devemos iniciar o nosso repositório git. Por ora saberemos também que será criada a nossa branch master 
+     (mais à frente veremos o que são branches, como utilizar mais de uma ao mesmo tempo e o que você ganha fazendo isso).
 
      
      >git init
@@ -65,7 +66,8 @@
 	ou seja, o cenário é que você acabou de criar um diretório sem nada lá dentro e deu o comando git init.
 
     E por que o diretório deverá estar vazio? Porque caso você tenha algum arquivo em seu repositório remoto (e provavelmente terá localmente
-	após executarmos o comando git pull), será preciso utilizar um comando para mesclar essas duas informações, dos arquivos que você tem e 
+	após executarmos o comando git pull), será preciso utilizar um comando para mesclar essas duas informações, 
+	dos arquivos que você tem e 
 	dos que estão lá e aí sim transformá-los num só. Então apenas siga o que digo (para não complicar a sua vida):
 
     Crie um diretório vazio;
@@ -75,7 +77,8 @@
     E depois prossiga com os outros tópicos;
 	
     C-02 – Adicione a origem de seu repositório remoto que irá utilizar. 
-	Provavelmente este repositório remoto lhe informará qual o comando correto para você adicioná-lo e você vai ter de se informar sobre isso. 
+	Provavelmente este repositório remoto lhe informará qual o comando correto para você adicioná-lo e você vai ter 
+	de se informar sobre isso. 
 	Para te ajudar coloquei dois comandos abaixo de como podem se parecer.
 
 
@@ -98,25 +101,30 @@
    Mostra quais são os arquivos que estão fora do controle de versão do git (untracked files).
 
    
-   C-05 – Para adicionar os arquivos em meu controle de versão para que passem a ser “versionados” utilizamos o comando git add (git add nome_do_arquivo_a_ser_versionado). Com este comando, você adiciona as pastas que deseja ao controle de versão. Porém se você digita .(espaço e ponto) após o comando, ele pega tudo que está dentro do diretório em que você está se encontra no momento.
+   C-05 – Para adicionar os arquivos em meu controle de versão para que passem a ser “versionados” utilizamos o comando git add (git add nome_do_arquivo_a_ser_versionado). Com este comando, você adiciona as pastas que deseja ao controle de versão.
+   Porém se você digita .(espaço e ponto) após o comando, ele pega tudo que está dentro do diretório em que você está se encontra no momento.
 
 
    O git add significa que os seus arquivos estão preparados para serem comitados e ao invés de os arquivos estarem listados como untracked files, serão listados como new file(novo arquivo).
 
    >git add .
-   Se você der o comando git status (novamente) depois de git add, ele mudará de estado para mostrar os arquivos que estão para serem comitados.
+   Se você der o comando git status (novamente) depois de git add, ele mudará de estado para mostrar os arquivos que estão
+   para serem comitados.
 
-    C-06 – Commit! Logo após que você adiciona os seus arquivos para serem “comitados” com o comando git add é hora de utilizar o comando commit:
+    C-06 – Commit! Logo após que você adiciona os seus arquivos para serem “comitados” com o comando git add é hora de
+    utilizar o comando commit:
 
    >git commit -m "O meu primeiro commit no git"
    E por que fazer o commit?
 
    Toda a vez que você altera um arquivo, você “comita”, ou seja, você grava aquela versão.
-   Quando você digita git commit -m, você está informando que vai deixar uma mensagem de identificação sobre a versão que você está gerando.
+   Quando você digita git commit -m, você está informando que vai deixar uma mensagem de identificação sobre a versão 
+   que você está gerando.
 
    Após executar o comando, ele irá gerar um código para este seu commit(algo como: master (root-commit) 4d68ec3] “O meu primeiro commit no git”).
 
-   Você também pode dar um git status para ver como as coisas estão saindo. Possivelmente ele irá dizer que não será preciso fazer mais nada porque tudo o que foi marcado para ser “comitado”, já foi comitado.
+   Você também pode dar um git status para ver como as coisas estão saindo. Possivelmente ele irá dizer que não será 
+   preciso fazer mais nada porque tudo o que foi marcado para ser “comitado”, já foi comitado.
 
 
 
@@ -128,12 +136,14 @@
   Caso Problemas de autenticação com erro 403
 
   Repare que pode existir endereço com https ou http, porém as vezes você pode ser supreendido com um erro do tipo “remote: Access denied” junto com “The requested URL returned error: 403”.
-  Para resolver este tipo de problema alguns indicam seguir no diretório/caminho .git/config que está dentro da raiz do seu projeto git, abra o arquivo config e altera o parâmetro http ou https do atributo url para ssh, depois salve, feche o arquivo e tente novamente enviar para o servidor remoto.
+  Para resolver este tipo de problema alguns indicam seguir no diretório/caminho .git/config que está dentro da raiz do 
+  seu projeto git, abra o arquivo config e altera o parâmetro http ou https do atributo url para ssh, depois salve, feche o arquivo e tente novamente enviar para o servidor remoto.
 
 
   D – O que são branches e para que precisamos gerenciá-las! – Voltar ao início
 
-  Até agora só trabalhamos com uma branch chamada de master e ela é praticamente a branch padrão que todo repositório git cria quando ele é iniciado com o comando git init. Por vezes trabalhamos em equipe e deixar que todos modifiquem o mesmo código pode dar problema e por isso devemos ter o hábito de criar uma ou mais branchs além da master e gerenciá-las de forma adequada.
+  Até agora só trabalhamos com uma branch chamada de master e ela é praticamente a branch padrão que todo repositório git cria quando ele é iniciado com o comando git init. Por vezes trabalhamos em equipe e deixar que todos modifiquem o 
+  mesmo código pode dar problema e por isso devemos ter o hábito de criar uma ou mais branchs além da master e gerenciá-las de forma adequada.
 
   Como dito antes, gerenciar branches é necessário quando se trabalha em equipe porque cada um costuma ter uma responsabilidade própria. E quando você cria uma nova branch a partir de uma já existente, está dizendo que vai pegar tudo o que você fez naquela branch atual que está trabalhando (no nosso caso é a master) e colocar numa nova branch de forma igualzinha, bonitinha e cheirozinha como já estava antes, sacou? Você faz um clone do estado atual de sua branch para uma outra e esse tipo de processo é o que chamamos de fork. E a partir deste raciocínio você tem duas opções para começar a trabalhar em outra branch. São elas:
 
@@ -180,7 +190,10 @@
 
   E – Clonando repositórios remotos para trabalharmos em cima deles
 
-  Pois bem, sabe quando já criamos um repositório remoto e ele já contém algum arquivo lá dentro e queremos enviar nossas modificações para ele? Difícil né? Mais adiante falaremos sobre como mesclar, juntar, “merjar” essas diferenças entre o que está no nosso repositório local e o que foi colocado no repositório remoto após criarmos um repositório local sem antes ver o que já existia no remoto ou quando pegamos as últimas alterações de um remoto e nesse meio tempo alteramos ainda mais coisas lá no remoto enquanto ainda nem enviamos as alterações feitas no nosso repositório local. Então por ora iremos nos ater apenas a iniciar um repositório a partir de um clone de um remoto.
+  Pois bem, sabe quando já criamos um repositório remoto e ele já contém algum arquivo lá dentro e queremos enviar nossas modificações para ele? Difícil né? Mais adiante falaremos sobre como mesclar, juntar, “merjar” essas diferenças entre 
+  o que está no nosso repositório local e o que foi colocado no repositório remoto após criarmos um repositório 
+  local sem antes ver o que já existia no remoto ou quando pegamos as últimas alterações de um remoto e nesse meio tempo alteramos ainda mais coisas lá no remoto enquanto ainda nem enviamos as alterações feitas no nosso repositório local. 
+  Então por ora iremos nos ater apenas a iniciar um repositório a partir de um clone de um remoto.
 
   E-01 Quando formos começar a codificar algo a partir de um clone, esqueça as configurações iniciais do git, apenas utilize o comando para clonar o repositório e comece a trabalhar nele normalmente.
 
@@ -191,7 +204,8 @@
 
   Primeiro faça uma única vez a configuração do repositório seguindo os passos B-01 e B-02 do tópico B.
 
-  Se adicionou novos arquivos ao diretório que clonou, siga os passos A-02 e A-03 do tópico A. E para enviar os arquivos de volta siga as intruções do passo C-06 do tópico C.
+  Se adicionou novos arquivos ao diretório que clonou, siga os passos A-02 e A-03 do tópico A. E para enviar os
+  arquivos de volta siga as intruções do passo C-06 do tópico C.
 
   E é isso.
 
@@ -209,7 +223,8 @@
 
   1
   type %userprofile%\.ssh\id_rsa.pub
-  O teste acima é meramente ilustrativo porque estou contando que esta chave já existe, por isso não vou deixar aqui como gerá-la (todas estas informações estão em http://seu_servidor_gitlab/help/ssh/README).
+  O teste acima é meramente ilustrativo porque estou contando que esta chave já existe, por isso não vou deixar aqui 
+  como gerá-la (todas estas informações estão em http://seu_servidor_gitlab/help/ssh/README).
 
   02 – Para copiar esta chave existente para o GitLab
 
@@ -232,14 +247,16 @@
   03 – Depois siga para o Gitlab
 
   Após executado os comandos acima siga para o Gitlab, Profile e Keys. Cole a chave lá e clique em Add Key.
-  Se ainda tiver problema no seu repositório, readicione-o com as informações contidas em seu repositório remoto no Gitlab.
+  Se ainda tiver problema no seu repositório, readicione-o com as informações contidas em seu repositório remoto 
+  no Gitlab.
 
 
   DICAS DIVERSAS (para quando você estiver agarrado em alguma coisa)
 
   Para apagar algumas configurações globais que podem te atrapalhar quando você trabalha com múltiplos contextos
 
-  Pois bem, por vezes trabalhamos com múltiplos contextos de git (mais precisamente múltiplas contas de email) e nessas horas podemos esbarrar em problemas de autenticação ao fazer push (unable to access, The requested URL returned error: 403) mesmo com o nosso repositório estando com configurações locais corretas. Então neste caso você pode executar os comandos abaixo.
+  Pois bem, por vezes trabalhamos com múltiplos contextos de git (mais precisamente múltiplas contas de email) e nessas horas podemos esbarrar em problemas de autenticação ao fazer push (unable to access, The requested URL returned error: 403) 
+  mesmo com o nosso repositório estando com configurações locais corretas. Então neste caso você pode executar os comandos abaixo.
 
   Este primeiro para indicar que queremos que o usuário utilize-se apenas das configurações locais.
 
