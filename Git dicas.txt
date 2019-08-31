@@ -48,7 +48,6 @@
 	  por isso somente recomendo utilizar configuração de repositório local. Portanto agora sim, prossiga.
 
     O user name:
-
  
       >git config --local user.name "Meu Lindo Nome"
       B-02 – 
