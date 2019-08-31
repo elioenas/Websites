@@ -277,7 +277,6 @@
 
   >git config --list
   Ou
-
   >git config --list --show-origin
   Lembrando que a parte das configurações locais listadas estão contidas no arquivo .git/config que está dentro do seu repositório local e portanto também podem serem editadas por um editor de texto como um Notepad.
 
